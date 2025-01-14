@@ -1,0 +1,9 @@
+{
+  "fake-crm": {
+    "name": "Fake CRM",
+    "description": "Fake CRM provider for Zapdos CLI documentation"
+  },
+  "undefined": {
+    "description": "Authenticate with OAuth flow"
+  }
+}
