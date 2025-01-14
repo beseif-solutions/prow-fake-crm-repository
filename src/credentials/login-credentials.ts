@@ -50,13 +50,6 @@ const loginCredentials: SessionCredentials<{ credentials: Token }> = {
         return { valid: true, };
       } catch (e) { return { valid: false }; }
     },
-
-    // TODO: remove this
-    refresh: async () => {
-      try {
-        return null;
-      } catch (e) { throw e; }
-    },
   },
   helpers: {
     user: async (core, configuration) => getUser(core, configuration),
