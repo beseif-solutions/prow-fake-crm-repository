@@ -5,5 +5,11 @@
   },
   "undefined": {
     "description": "Authenticate with OAuth flow"
+  },
+  "order-status-changed": {
+    "description": "Triggered when a order status is updated"
+  },
+  "new-order": {
+    "description": "Triggers when a new order is created"
   }
 }

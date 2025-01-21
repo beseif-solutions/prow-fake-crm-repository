@@ -1,4 +1,6 @@
 import { Provider } from "@beseif-solutions/zapdos-core";
+import newOrder from "./triggers/new-order";
+import orderStatusChanged from "./triggers/order-status-changed";
 import oauthCredentials from "./credentials/oauth-credentials";
 import loginCredentials from "./credentials/login-credentials";
 import appCredentials from "./credentials/app-credentials";
@@ -12,7 +14,10 @@ const provider: Provider = {
     [loginCredentials.id]: loginCredentials,
     [oauthCredentials.id]: oauthCredentials,
   },
-  triggers: {},
+  triggers: {
+    [orderStatusChanged.id]: orderStatusChanged,
+    [newOrder.id]: newOrder,
+  },
   actions: {},
 };
 
