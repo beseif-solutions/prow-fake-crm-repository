@@ -1,4 +1,4 @@
-import { OAuthCredentials } from "@beseif-solutions/zapdos-core";
+import { OAuthCredentials } from "@beseif-solutions/prow-core";
 import { getUser } from "../commons/functions";
 
 export type OAuth = {

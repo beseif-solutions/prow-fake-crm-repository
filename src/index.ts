@@ -1,4 +1,4 @@
-import { Provider } from "@beseif-solutions/zapdos-core";
+import { Provider } from "@beseif-solutions/prow-core";
 import newOrder from "./triggers/new-order";
 import orderStatusChanged from "./triggers/order-status-changed";
 import oauthCredentials from "./credentials/oauth-credentials";

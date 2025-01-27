@@ -1,4 +1,4 @@
-import { ImmediateTrigger } from "@beseif-solutions/zapdos-core";
+import { ImmediateTrigger } from "@beseif-solutions/prow-core";
 import appCredentials, { App } from "../credentials/app-credentials";
 import loginCredentials, { Token } from "../credentials/login-credentials";
 import oauthCredentials, { OAuth } from "../credentials/oauth-credentials";
@@ -72,7 +72,7 @@ const orderStatusChanged: ImmediateTrigger<{
         return { records: records, flags: { done: true } };
       } catch (e) { throw e; }
     },
-    mount: async (core, configuration) => {
+    fire: async (core, configuration) => {
       try {
         const orders = await getOrders(core, {
           credentials: configuration.credentials,

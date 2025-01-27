@@ -1,4 +1,4 @@
-import { ScheduledTrigger } from "@beseif-solutions/zapdos-core";
+import { ScheduledTrigger } from "@beseif-solutions/prow-core";
 import { getOrders, Order, OrderStatus } from "../commons/functions";
 import appCredentials, { App } from "../credentials/app-credentials";
 import loginCredentials, { Token } from "../credentials/login-credentials";

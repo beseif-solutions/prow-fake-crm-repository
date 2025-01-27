@@ -1,4 +1,4 @@
-import { SessionCredentials } from "@beseif-solutions/zapdos-core/dist/entities/credentials";
+import { SessionCredentials } from "@beseif-solutions/prow-core/dist/entities/credentials";
 import { getUser } from "../commons/functions";
 
 export type Token = {

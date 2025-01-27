@@ -1,4 +1,4 @@
-import { CoreFunction } from "@beseif-solutions/zapdos-core";
+import { CoreFunction } from "@beseif-solutions/prow-core";
 import { App } from "../credentials/app-credentials";
 import { Token } from "../credentials/login-credentials";
 import { OAuth } from "../credentials/oauth-credentials";

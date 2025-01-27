@@ -1,4 +1,4 @@
-import { StaticCredentials } from "@beseif-solutions/zapdos-core";
+import { StaticCredentials } from "@beseif-solutions/prow-core";
 import { getUser } from "../commons/functions";
 
 export type App = {
