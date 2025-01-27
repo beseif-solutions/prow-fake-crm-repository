@@ -2,10 +2,11 @@ import { OAuthCredentials } from "@beseif-solutions/zapdos-core";
 import { getUser } from "../commons/functions";
 
 export type OAuth = {
+  id_token: string,
   access_token: string,
   expires_in: number,
+  scope: string,
   token_type: string,
-  id_token: string,
   refresh_token: string,
 };
 
@@ -32,6 +33,7 @@ const oauthCredentials: OAuthCredentials<{ credentials: OAuth }> = {
     },
     connect: async (core, configuration) => {
       try {
+        // obtain the credentials
         const oauth2 = (await core.axios.post(`/auth/token`, {
           client_id: await core.env.read(`CLIENT_ID`),
           client_secret: await core.env.read(`CLIENT_SECRET`),
@@ -44,7 +46,7 @@ const oauthCredentials: OAuthCredentials<{ credentials: OAuth }> = {
         })).data as OAuth;
         if (!oauth2.access_token || !oauth2.refresh_token) { throw new Error(`No valid credentials: missing access_token or refresh_token`); }
 
-        // get username
+        // get user
         const user = await getUser(core, {
           sandbox: false,
           credentials: oauth2,
@@ -62,13 +64,14 @@ const oauthCredentials: OAuthCredentials<{ credentials: OAuth }> = {
           client_id: await core.env.read(`CLIENT_ID`),
           client_secret: await core.env.read(`CLIENT_SECRET`),
           grant_type: `refresh_token`,
+          // old credentials refresh_token
           refresh_token: configuration.credentials.refresh_token,
         }, {
           baseURL: await core.env.read(`HOST`),
         })).data as OAuth;
         if (!oauth2.access_token) { throw new Error(`No valid credentials: missing access_token`); }
 
-        // get username
+        // get user
         const user = await getUser(core, {
           sandbox: false,
           credentials: oauth2,

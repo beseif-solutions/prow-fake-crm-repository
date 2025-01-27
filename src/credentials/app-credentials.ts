@@ -27,7 +27,9 @@ const appCredentials: StaticCredentials<{ credentials: App }> = {
   functions: {
     check: async (core, configuration) => {
       try {
+        // call the API's authentication user endpoint
         await getUser(core, configuration);
+        // if no error is raised the authentication data is valid
         return { valid: true };
       } catch (e) { return { valid: false }; }
     },
