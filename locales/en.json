@@ -4,7 +4,7 @@
     "description": "Fake CRM provider for Zapdos CLI documentation"
   },
   "undefined": {
-    "description": "Authenticate with OAuth flow"
+    "description": "Get order by ID"
   },
   "order-status-changed": {
     "description": "Triggered when a order status is updated"

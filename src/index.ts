@@ -1,4 +1,5 @@
 import { Provider } from "@beseif-solutions/prow-core";
+import getOrder from "./actions/get-order";
 import newOrder from "./triggers/new-order";
 import orderStatusChanged from "./triggers/order-status-changed";
 import oauthCredentials from "./credentials/oauth-credentials";
@@ -18,7 +19,9 @@ const provider: Provider = {
     [orderStatusChanged.id]: orderStatusChanged,
     [newOrder.id]: newOrder,
   },
-  actions: {},
+  actions: {
+    [getOrder.id]: getOrder,
+  },
 };
 
 export default provider;
