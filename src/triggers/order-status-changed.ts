@@ -80,8 +80,9 @@ const orderStatusChanged: ImmediateTrigger<{
         });
         if (orders.length === 0) { return { done: false }; }
 
-        const { data: { sent } } = await core.axios.post(`/orders/${orders[0].id}/webhook`, null,
-          await requestConfig(core, configuration));
+        const { data: { sent } } = await core.axios.post(`/orders/${orders[0].id}/webhook`, {
+          webhook: configuration.inputs.link,
+        }, await requestConfig(core, configuration));
 
         return { done: sent };
       } catch (e) { throw e; }
