@@ -13,7 +13,7 @@ const orderStatusChanged: ImmediateTrigger<{
   id: `order-status-changed`,
   model: `event`,
   type: `trigger`,
-  categories: [`crm`],
+  category: `crm`,
   immediate: true,
   sandbox: false,
   credentials: [

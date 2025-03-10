@@ -12,7 +12,7 @@ const newOrder: ScheduledTrigger<{
   id: `new-order`,
   model: `event`,
   type: `trigger`,
-  categories: [`crm`],
+  category: `crm`,
   immediate: false,
   sandbox: false,
   credentials: [
