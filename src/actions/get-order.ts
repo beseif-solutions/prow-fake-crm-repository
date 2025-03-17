@@ -40,6 +40,7 @@ const getOrder: Action<{
       key: `id`,
       type: `number`,
       float: false,
+      required: true,
     }
   ],
   functions: {

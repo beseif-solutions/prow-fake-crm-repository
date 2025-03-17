@@ -95,8 +95,8 @@ const oauthCredentials: OAuthCredentials<{ credentials: OAuth }> = {
     },
     check: async (core, configuration) => {
       try {
-        await getUser(core, configuration);
-        return { valid: true };
+        const user = await getUser(core, configuration);
+        return { valid: true, username: user.username };
       } catch (e) { return { valid: false }; }
     },
   },
