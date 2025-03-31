@@ -30,7 +30,7 @@ const loginCredentials: SessionCredentials<{ credentials: Token }> = {
           username: configuration.inputs.fields.username,
           password: configuration.inputs.fields.password,
         }, {
-          baseURL: await core.env.read(`HOST`),
+          baseURL: core.env.HOST,
         });
 
         const user = await getUser(core, {

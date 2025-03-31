@@ -20,9 +20,9 @@ const oauthCredentials: OAuthCredentials<{ credentials: OAuth }> = {
       try {
         return {
           method: `GET`,
-          action: `${await core.env.read(`HOST`)}/auth/account`,
+          action: `${core.env.HOST}/auth/account`,
           body: {
-            client_id: await core.env.read(`CLIENT_ID`),
+            client_id: core.env.CLIENT_ID,
             redirect_uri: configuration.inputs.redirect,
             response_type: `code`,
             access_type: `offline`,
@@ -35,14 +35,14 @@ const oauthCredentials: OAuthCredentials<{ credentials: OAuth }> = {
       try {
         // obtain the credentials
         const oauth2 = (await core.axios.post(`/auth/token`, {
-          client_id: await core.env.read(`CLIENT_ID`),
-          client_secret: await core.env.read(`CLIENT_SECRET`),
+          client_id: core.env.CLIENT_ID,
+          client_secret: core.env.CLIENT_SECRET,
           grant_type: `authorization_code`,
           scope: `*`,
           redirect_uri: configuration.inputs.redirect,
           code: configuration.inputs.code,
         }, {
-          baseURL: await core.env.read(`HOST`),
+          baseURL: core.env.HOST,
         })).data as OAuth;
         if (!oauth2.access_token || !oauth2.refresh_token) { throw new Error(`No valid credentials: missing access_token or refresh_token`); }
 
@@ -61,13 +61,13 @@ const oauthCredentials: OAuthCredentials<{ credentials: OAuth }> = {
     refresh: async (core, configuration) => {
       try {
         const oauth2 = (await core.axios.post(`/auth/token`, {
-          client_id: await core.env.read(`CLIENT_ID`),
-          client_secret: await core.env.read(`CLIENT_SECRET`),
+          client_id: core.env.CLIENT_ID,
+          client_secret: core.env.CLIENT_SECRET,
           grant_type: `refresh_token`,
           // old credentials refresh_token
           refresh_token: configuration.credentials.refresh_token,
         }, {
-          baseURL: await core.env.read(`HOST`),
+          baseURL: core.env.HOST,
         })).data as OAuth;
         if (!oauth2.access_token) { throw new Error(`No valid credentials: missing access_token`); }
 
@@ -88,7 +88,7 @@ const oauthCredentials: OAuthCredentials<{ credentials: OAuth }> = {
         await core.axios.post(`/auth/revoke`, {
           id: configuration.credentials.id_token,
         }, {
-          baseURL: await core.env.read(`HOST`),
+          baseURL: core.env.HOST,
         });
         return { done: true };
       } catch (e) { throw e; }

@@ -1,5 +1,5 @@
 {
-  "name": "zapdos-fake-crm-repository",
+  "name": "prow-fake-crm-repository",
   "version": "1.0.0",
   "description": "Fake CRM provider for Zapdos CLI documentation",
   "main": "dist/index.js",
@@ -10,7 +10,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@beseif-solutions/prow-core": "^0.0.26",
+    "@beseif-solutions/prow-core": "^0.0.29",
     "ts-node": "^8.10.2"
   },
   "devDependencies": {

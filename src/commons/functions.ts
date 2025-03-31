@@ -32,7 +32,7 @@ export const requestConfig: CoreFunction<{
   credentials: App | Token | OAuth,
   inputs: undefined,
 }> = async (core, configuration) => ({
-  baseURL: await core.env.read(`HOST`),
+  baseURL: core.env.HOST,
   headers: {
     ...(`id` in configuration.credentials) ? {
       // app
