@@ -9,7 +9,6 @@ import appCredentials from "./credentials/app-credentials";
 const provider: Provider = {
   id: `fake-crm`,
   model: `provider`,
-  categories: [`crm`],
   credentials: {
     [appCredentials.id]: appCredentials,
     [loginCredentials.id]: loginCredentials,
@@ -22,6 +21,7 @@ const provider: Provider = {
   actions: {
     [getOrder.id]: getOrder,
   },
+  sources: {},
 };
 
 export default provider;

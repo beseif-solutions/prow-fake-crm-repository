@@ -12,7 +12,13 @@ const getOrder: Action<{
   id: `get-order`,
   model: `event`,
   type: `action`,
-  category: `crm`,
+  categorization: {
+    department: `sales`,
+    category: `crm`,
+  },
+  ui: {
+    group: `orders`,
+  },
   sandbox: false,
   credentials: [
     appCredentials.id,

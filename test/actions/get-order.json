@@ -16,7 +16,7 @@
       "result": "success"
     },
     {
-      "description": "should't throw error to get order with invalid id",
+      "description": "should throw error to get order with invalid id",
       "options": {
         "credentials": "app-credentials",
         "fields": {
@@ -26,7 +26,7 @@
           "do": true
         }
       },
-      "result": "success"
+      "result": "fail"
     }
   ]
 }
