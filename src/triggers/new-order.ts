@@ -18,6 +18,7 @@ const newOrder: ScheduledTrigger<{
   },
   ui: {
     group: `orders`,
+    icon: "addSquare"
   },
   immediate: false,
   sandbox: false,

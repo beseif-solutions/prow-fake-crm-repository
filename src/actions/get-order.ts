@@ -18,6 +18,7 @@ const getOrder: Action<{
   },
   ui: {
     group: `orders`,
+    icon: "search"
   },
   sandbox: false,
   credentials: [

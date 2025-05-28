@@ -19,6 +19,7 @@ const orderStatusChanged: ImmediateTrigger<{
   },
   ui: {
     group: `orders`,
+    icon: "edit"
   },
   immediate: true,
   sandbox: false,
