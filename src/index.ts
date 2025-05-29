@@ -5,9 +5,11 @@ import orderStatusChanged from "./triggers/order-status-changed";
 import oauthCredentials from "./credentials/oauth-credentials";
 import loginCredentials from "./credentials/login-credentials";
 import appCredentials from "./credentials/app-credentials";
+import pack from "../package.json";
 
 const provider: Provider = {
   id: `fake-crm`,
+  version: pack.version,
   model: `provider`,
   credentials: {
     [appCredentials.id]: appCredentials,
