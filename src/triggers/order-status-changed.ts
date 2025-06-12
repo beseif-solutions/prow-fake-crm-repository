@@ -8,6 +8,9 @@ import { createHmac } from "crypto";
 const orderStatusChanged: ImmediateTrigger<{
   credentials: OAuth | App | Token,
   flags: { outputs: [`done`] },
+  fields: {
+    statuses: OrderStatus[],
+  },
   outputs: Order,
 }> = {
   id: `order-status-changed`,
@@ -19,7 +22,7 @@ const orderStatusChanged: ImmediateTrigger<{
   },
   ui: {
     group: `orders`,
-    icon: "edit"
+    icon: `edit`,
   },
   immediate: true,
   sandbox: false,
@@ -64,7 +67,7 @@ const orderStatusChanged: ImmediateTrigger<{
         hmac.update(JSON.stringify(payload));
         if (signature !== hmac.digest(`hex`)) { throw new Error(`Invalid request: signature verification failed`); }
 
-        const statuses = configuration.inputs.fields.statuses as OrderStatus[];
+        const statuses = configuration.inputs.fields.statuses;
 
         const records: Order[] = [];
         if (!statuses || statuses.length === 0 || statuses.includes(payload.status)) {

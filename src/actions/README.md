@@ -1,4 +1,4 @@
-# Actions
+# SyncActions
 
 You can find all the documentation related to actions here:
 - [What are events?](https://brash-draw-23a.notion.site/2-3-Events-144fb6141064806ea55ecc81ba1dc978)

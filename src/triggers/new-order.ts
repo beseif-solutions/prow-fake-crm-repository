@@ -7,6 +7,7 @@ import oauthCredentials, { OAuth } from "../credentials/oauth-credentials";
 const newOrder: ScheduledTrigger<{
   credentials: OAuth | App | Token,
   flags: { outputs: [`done`] },
+  fields: {},
   outputs: Order,
 }> = {
   id: `new-order`,
@@ -18,7 +19,7 @@ const newOrder: ScheduledTrigger<{
   },
   ui: {
     group: `orders`,
-    icon: "addSquare"
+    icon: `addSquare`,
   },
   immediate: false,
   sandbox: false,

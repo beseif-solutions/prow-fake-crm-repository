@@ -1,12 +1,15 @@
-import { Action } from "@beseif-solutions/prow-core";
+import { SyncAction } from "@beseif-solutions/prow-core";
 import appCredentials, { App } from "../credentials/app-credentials";
 import loginCredentials, { Token } from "../credentials/login-credentials";
 import oauthCredentials, { OAuth } from "../credentials/oauth-credentials";
 import { Order, getOrder as get } from "../commons/functions";
 
-const getOrder: Action<{
+const getOrder: SyncAction<{
   credentials: OAuth | App | Token,
   flags: { inputs: [`do`], outputs: [`done`, `error`] },
+  fields: {
+    id: number,
+  }
   outputs: Order | { message: string },
 }> = {
   id: `get-order`,
