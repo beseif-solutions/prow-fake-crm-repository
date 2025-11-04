@@ -1,0 +1,32 @@
+{
+  "type": "action",
+  "id": "get-order",
+  "tests": [
+    {
+      "description": "should get order with valid id",
+      "options": {
+        "credentials": "app-credentials",
+        "fields": {
+          "id": 1
+        },
+        "flags": {
+          "do": true
+        }
+      },
+      "result": "success"
+    },
+    {
+      "description": "should throw error to get order with invalid id",
+      "options": {
+        "credentials": "app-credentials",
+        "fields": {
+          "id": 999
+        },
+        "flags": {
+          "do": true
+        }
+      },
+      "result": "fail"
+    }
+  ]
+}

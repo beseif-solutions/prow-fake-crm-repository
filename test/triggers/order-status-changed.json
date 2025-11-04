@@ -1,0 +1,37 @@
+{
+  "type": "trigger",
+  "id": "order-status-changed",
+  "tests": [
+    {
+      "description": "should receive trigger when order status changes (fire + handle)",
+      "options": {
+        "credentials": "app-credentials",
+        "server": true,
+        "fields": {}
+      },
+      "result": "success"
+    },
+    {
+      "description": "should return data (poll)",
+      "options": {
+        "credentials": "app-credentials",
+        "server": false,
+        "fields": {}
+      },
+      "result": "success"
+    },
+    {
+      "description": "should throw error with invalid status name",
+      "options": {
+        "credentials": "app-credentials",
+        "server": true,
+        "fields": {
+          "statuses": [
+            "invalid-status"
+          ]
+        }
+      },
+      "result": "fail"
+    }
+  ]
+}

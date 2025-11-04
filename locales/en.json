@@ -1,0 +1,120 @@
+{
+	"fake-crm": {
+		"name": "Fake CRM",
+		"description": "Fake CRM provider for Zapdos CLI documentation"
+	},
+	"order-status-changed": {
+		"name": "Order status changed",
+		"description": "Triggered when a order status is updated",
+		"fields": {
+			"statuses": {
+				"label": "Statuses",
+				"help": "",
+				"choices": {
+					"pending": {
+						"label": "Pending",
+						"help": ""
+					},
+					"fabricated": {
+						"label": "Fabricated",
+						"help": ""
+					},
+					"shipped": {
+						"label": "Shipped",
+						"help": ""
+					},
+					"delivered": {
+						"label": "Delivered",
+						"help": ""
+					},
+					"completed": {
+						"label": "Completed",
+						"help": ""
+					}
+				}
+			}
+		},
+		"outputs": {
+			"done": {
+				"name": "Done",
+				"description": ""
+			}
+		}
+	},
+	"new-order": {
+		"name": "New order",
+		"description": "Triggered when a new order is created",
+		"outputs": {
+			"done": {
+				"name": "Done",
+				"description": ""
+			}
+		}
+	},
+	"app-credentials": {
+		"name": "App credentials",
+		"description": "",
+		"fields": {
+			"id": {
+				"label": "App Id",
+				"help": ""
+			},
+			"token": {
+				"label": "Token",
+				"help": ""
+			}
+		}
+	},
+	"login-credentials": {
+		"name": "Login credentials",
+		"description": "",
+		"fields": {
+			"username": {
+				"label": "Username",
+				"help": ""
+			},
+			"password": {
+				"label": "Password",
+				"help": ""
+			}
+		}
+	},
+	"oauth-credentials": {
+		"name": "OAuth credentials",
+		"description": ""
+	},
+	"get-order": {
+		"name": "Get order",
+		"description": "Get a order by ID",
+		"fields": {
+			"id": {
+				"label": "ID",
+				"help": ""
+			}
+		},
+		"inputs": {
+			"do": {
+				"name": "Do",
+				"description": ""
+			}
+		},
+		"outputs": {
+			"done": {
+				"name": "Done",
+				"description": ""
+			},
+			"error": {
+				"name": "Error",
+				"description": ""
+			}
+		}
+	},
+	"ui": {
+		"groups": {
+			"orders": {
+				"name": "Orders",
+				"description": ""
+			}
+		}
+	}
+}

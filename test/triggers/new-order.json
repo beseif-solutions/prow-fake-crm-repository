@@ -1,0 +1,14 @@
+{
+  "type": "trigger",
+  "id": "new-order",
+  "tests": [
+    {
+      "description": "should get new orders",
+      "options": {
+        "credentials": "app-credentials",
+        "fields": {}
+      },
+      "result": "success"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "prow-fake-crm-repository",
+  "version": "1.0.0",
+  "description": "Fake CRM provider for Zapdos CLI documentation",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "exit 0",
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc"
+  },
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@beseif-solutions/prow-core": "^0.2.8",
+    "@types/node": "^14.18.34"
+  }
+}
