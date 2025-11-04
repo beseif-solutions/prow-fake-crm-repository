@@ -9,7 +9,7 @@ const loginCredentials: SessionCredentials<{ credentials: Token }> = {
   id: `login-credentials`,
   model: `credentials`,
   type: `session`,
-  sandbox: false,
+  sandbox: true,
   fields: [
     {
       key: `username`,

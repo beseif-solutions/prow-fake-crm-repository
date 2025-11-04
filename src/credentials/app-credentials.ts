@@ -10,7 +10,7 @@ const appCredentials: StaticCredentials<{ credentials: App }> = {
   id: `app-credentials`,
   model: `credentials`,
   type: `static`,
-  sandbox: false,
+  sandbox: true,
   fields: [
     {
       key: `id`,

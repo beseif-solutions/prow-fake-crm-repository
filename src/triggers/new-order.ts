@@ -22,7 +22,7 @@ const newOrder: ScheduledTrigger<{
     icon: `addSquare`,
   },
   immediate: false,
-  sandbox: false,
+  sandbox: true,
   credentials: [
     appCredentials.id,
     loginCredentials.id,

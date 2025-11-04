@@ -23,7 +23,7 @@ const getOrder: SyncAction<{
     group: `orders`,
     icon: "search"
   },
-  sandbox: false,
+  sandbox: true,
   credentials: [
     appCredentials.id,
     loginCredentials.id,

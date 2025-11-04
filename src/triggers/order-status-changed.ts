@@ -25,7 +25,7 @@ const orderStatusChanged: ImmediateTrigger<{
     icon: `edit`,
   },
   immediate: true,
-  sandbox: false,
+  sandbox: true,
   credentials: [
     appCredentials.id,
     loginCredentials.id,

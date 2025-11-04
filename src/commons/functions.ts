@@ -32,7 +32,7 @@ export const requestConfig: CoreFunction<{
   credentials: App | Token | OAuth,
   inputs: undefined,
 }> = async (core, configuration) => ({
-  baseURL: core.env.HOST,
+  baseURL: configuration.sandbox ? core.env.SANDBOX_HOST : core.env.HOST,
   headers: {
     ...(`id` in configuration.credentials) ? {
       // app
@@ -72,7 +72,10 @@ export const getOrder: CoreFunction<{
       await requestConfig(core, configuration));
 
     return data.data;
-  } catch (e) { throw e; }
+  } catch (e) {
+    console.log(e);
+    throw e;
+  }
 }
 
 export const getOrders: CoreFunction<{

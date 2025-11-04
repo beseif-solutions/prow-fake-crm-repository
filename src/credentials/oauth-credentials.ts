@@ -14,7 +14,7 @@ const oauthCredentials: OAuthCredentials<{ credentials: OAuth }> = {
   id: `oauth-credentials`,
   model: `credentials`,
   type: `oauth`,
-  sandbox: false,
+  sandbox: true,
   functions: {
     oauth: async (core, configuration) => {
       try {
@@ -48,7 +48,7 @@ const oauthCredentials: OAuthCredentials<{ credentials: OAuth }> = {
 
         // get user
         const user = await getUser(core, {
-          sandbox: false,
+          sandbox: true,
           credentials: oauth2,
         });
 
@@ -73,7 +73,7 @@ const oauthCredentials: OAuthCredentials<{ credentials: OAuth }> = {
 
         // get user
         const user = await getUser(core, {
-          sandbox: false,
+          sandbox: true,
           credentials: oauth2,
         });
 
